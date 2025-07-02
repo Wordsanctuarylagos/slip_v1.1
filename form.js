@@ -1,4 +1,4 @@
-// === form.js (final version using FormData and no CORS errors) ===
+// === Updated form.js (with required receipt validation for E-Banking) ===
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("givingForm");
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -21,12 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    const paymentType = paymentTypeInput.value;
+    const isEBanking = paymentType === "e-banking";
+
+    // Validate receipt upload for E-Banking
+    if (isEBanking && receiptInput.files.length === 0) {
+      alert("Please upload your payment receipt before submitting.");
+      return;
+    }
+
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
 
     const fd = new FormData(form);
 
-    if (receiptInput.files.length > 0) {
+    if (isEBanking) {
       const file = receiptInput.files[0];
       const reader = new FileReader();
 
