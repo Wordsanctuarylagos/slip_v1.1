@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function sendData(data) {
     fetch(SCRIPT_URL, {
       method: "POST",
+      mode: "cors",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json"
