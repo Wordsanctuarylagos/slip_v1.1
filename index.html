@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WSL - Giving Slip</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="media-img/logo1.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="container">
+    <div class="wrapper">
+      <div class="contact">
+        <div class="head">
+          <img src="./media-img/logo.png" alt="Church Logo" />
+          <h3>Giving Slip</h3>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Word Sanctuary Global Ministry-Lagos</strong></p>
+          <p>Bank: FCMB</p>
+          <p>Account Number: 2004538195</p>
+        </div>
+
+        <form id="givingForm">
+          <fieldset>
+            <legend>Giving Details</legend>
+
+            <div class="form-group full">
+              <input type="text" name="fullname" placeholder="Full Name" required />
+            </div>
+
+            <div class="form-group full">
+              <input type="tel" name="phone" placeholder="Phone Number" required />
+            </div>
+
+            <div class="form-group full">
+              <input type="text" name="giving_number" placeholder="Giving Number" />
+            </div>
+
+            <!-- Toggle Payment Type -->
+            <div class="form-group full">
+              <label>Select Payment Type:</label>
+              <div class="toggle-group">
+                <button type="button" class="toggle-btn active" data-type="cash">Cash</button>
+                <button type="button" class="toggle-btn" data-type="e-banking">E-Banking</button>
+              </div>
+              <input type="hidden" name="payment_type" id="paymentTypeInput" value="cash" />
+            </div>
+
+            <!-- Conditional Receipt Upload -->
+            <div class="form-group full" id="receiptUploadGroup" style="display: none;">
+              <label>Upload Receipt:</label>
+              <input type="file" id="receiptInput" accept="image/*,application/pdf" />
+            </div>
+
+            <div class="form-group full">
+              <select name="giving_type" required>
+                <option value="" disabled selected hidden>Type of Giving</option>
+                <option value="tithe">Tithe</option>
+                <option value="haven_offering">Haven Offering</option>
+                <option value="offering">Offering</option>
+                <option value="first_fruit">First Fruit</option>
+                <option value="seed_offering">Seed Offering</option>
+                <option value="just_praise">Just Praise</option>
+                <option value="thanksgiving">Thanksgiving</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <input type="text" name="description" placeholder="Description (for Others)" />
+            </div>
+
+            <div class="form-group full">
+              <input type="number" name="amount" placeholder="Amount (₦)" required />
+            </div>
+
+            <div class="form-group full">
+              <input type="date" name="giving_date" required />
+            </div>
+
+            <div class="form-group full">
+              <textarea name="comment" placeholder="Comment (Optional)" rows="3"></textarea>
+            </div>
+
+            <div class="form-group full">
+              <button type="submit">Submit Giving Details</button>
+            </div>
+
+            <div id="confirmationMessage" style="display:none; color: green; text-align: center; margin-top: 1rem;">
+              ✅ Thank you! Your giving details have been received.
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/wordsanctuarypage/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com/word_sanctuary" aria-label="X" style="font-weight: bold; font-size: 20px;">X</a>
+      <a href="https://www.instagram.com/wordsanctuaryglobal/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@WordSanctuaryTV" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="sign">Word Sanctuary Lagos &copy; 2025</div>
+  </footer>
+
+  <script src="form.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --shadow: 0 .5rem 1rem rgb(0,0,0,.05);
+  --blue: #0D99FF;
+  --blue-light: #cfe4ff;
+  --blue-dark: #0A7ACC;
+  --rounded: .25rem;
+  --rounded-md: .5rem;
+}
+
+body {
+  background-color: white;
+  line-height: 1.5;
+  color: #000;
+}
+
+.container {
+  max-width: 870px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .wrapper {
+  box-shadow: 0 0 20px 0 rgba(255,255,255,1);
+  border-radius: 20px;
+  background-color: white;
+}
+
+.wrapper > * {
+  padding: 1.5em;
+}
+
+.contact .head {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: left;
+  align-items: center;
+}
+
+.contact h3 {
+  color: #000;
+}
+
+img {
+  width: 90px;
+}
+
+.info-box {
+  background-color: var(--blue-light);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.info-box p {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group.full {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact form input,
+.contact form textarea,
+.contact form select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--blue);
+  border-radius: var(--rounded);
+  background-color: white;
+  color: black;
+  transition: border 0.5s ease-in-out;
+  margin-bottom: 0.5rem;
+}
+
+.contact form input:focus,
+.contact form textarea:focus,
+.contact form select:focus {
+  border: 2px solid var(--blue-dark);
+  outline: none;
+  background-color: white;
+  color: black;
+}
+
+.contact form textarea {
+  resize: none;
+  overflow-y: auto;
+}
+
+form fieldset {
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  padding: 2rem 1.5rem 1.5rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+form legend {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  background-color: white;
+  padding: 0 1rem;
+  position: absolute;
+  top: -0.9rem;
+  left: 1.2rem;
+  z-index: 1;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 2rem auto 1rem;
+  background-color: var(--blue);
+  border: none;
+  padding: 0.75rem 2rem;
+  color: white;
+  font-weight: bold;
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--blue-dark);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  color: #fff;
+  background-color: var(--blue-dark);
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social-icons a {
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 20px;
+  color: #fff;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+footer .social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+footer .sign {
+  font-size: 12px;
+}
+
+/* Toggle Button Styles */
+.toggle-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--blue-light);
+  color: var(--blue-dark);
+  border: 1px solid var(--blue-dark);
+  border-radius: var(--rounded);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn.active {
+  background-color: var(--blue-dark);
+  color: white;
+}
+
+@media screen and (min-width: 780px) {
+  .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .container .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    box-shadow: 0 0 20px 0 rgba(0,0,0,1);
+    border-radius: 20px;
+  }
+
+  .contact {
+    padding: 30px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  footer {
+    height: 100px;
+  }
+
+  footer .social-icons a {
+    font-size: 20px;
+    margin: 0 10px;
+  }
+
+  footer .sign {
+    font-size: 12px;
+    padding-bottom: 5px;
+  }
+}
